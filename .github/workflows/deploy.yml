@@ -20,11 +20,9 @@ jobs:
           script: |
             cd /var/www/react-query-demo/ 
             echo '--- Deployment successful to digital ocean PROD VM ---' 
-            git checkout main
-            docker-compose down
-            git pull origin main
-            cp .env.prd .env
-            docker-compose up -d
-            #docker-compose run -d --service-ports anaconda -c "python -m uvicorn main:app --host 0.0.0.0"
+            git checkout master
+            docker compose down
+            git pull origin master
+            docker compose up -d
 
 
