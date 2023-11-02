@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ui:
+    image: node:16-alpine3.17
+    working_dir: /var/www/chatbot
+    restart: "no"
+    command: sh -l -c "npm install && npm run build"
+    volumes:
+      - ./:/var/www
